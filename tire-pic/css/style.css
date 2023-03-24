@@ -1,0 +1,151 @@
+img {
+  border: 0;
+}
+
+address, form, section, nav, menu, header, footer, aside, article, input, table, textarea, legend, li, ol, ul, p, dd, dt, dl, button, h6, h5, h4, h3, h2, h1, body {
+  margin: 0;
+  padding: 0;
+}
+
+address, section, nav, menu, header, footer, aside, article {
+  display: block;
+}
+
+li, ol, ul {
+  list-style: none;
+}
+
+.blind, .skip {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.hide {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+html {
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  height: 100%;
+  background: #f1f1f1;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "Malgun Gothic", Helvetica, "Apple SD Gothic Neo", Dotum, sans-serif;
+  font-size: 87.5%;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h6, h5, h4, h3, h2, h1 {
+  font-family: "Malgun Gothic", Helvetica, "Apple SD Gothic Neo", Dotum, sans-serif;
+  font-style: normal;
+}
+
+em {
+  font-family: "Malgun Gothic", Helvetica, "Apple SD Gothic Neo", Dotum, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  border-width: 0;
+  background: 0 0;
+  outline: 0;
+  font-family: "Malgun Gothic", Helvetica, "Apple SD Gothic Neo", Dotum, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+button:focus {
+  outline: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+a:active, a:hover, a:link {
+  text-decoration: none;
+}
+
+caption {
+  font-family: "Malgun Gothic", Helvetica, "Apple SD Gothic Neo", Dotum, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+textarea:focus {
+  outline: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  border-width: 0;
+  background: 0 0;
+  outline: 0;
+  font-family: "Malgun Gothic", Helvetica, "Apple SD Gothic Neo", Dotum, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+input:focus {
+  outline: 0;
+}
+
+.search {
+  height: 48px;
+  border-radius: 48px;
+  border: 1px solid #6024c6;
+}
+.search__button {
+  background: url("../images/btn_search.png") no-repeat center;
+  width: 46px;
+  height: 46px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40px;
+}
+
+.spot-menu {
+  display: none;
+}

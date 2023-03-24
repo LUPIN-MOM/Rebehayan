@@ -1,0 +1,14 @@
+.search {
+      height: 48px;
+      border-radius: 48px;
+      border: 1px solid $purple;
+      &__button {
+            // background: url("../images/btn_search.png") no-repeat center ;
+            @include bg ("btn_search.png", center);
+            width: 46px;
+            height: 46px;
+      }
+      input {
+            width: 345px;
+      }
+}

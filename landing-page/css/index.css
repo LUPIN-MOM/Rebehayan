@@ -1,0 +1,353 @@
+:root {
+      --bg-color:#0B1D26;
+      --white:#fff;
+      --white-1: rgba(255,255,255,.1);
+      --white-5: rgba(255,255,255,.5);
+      --black:#000;
+      --gold:#FBD784;
+      --font1:'DM Serif Text', serif;
+      --font2:'Gilroy-Regular', sans-serif; 
+}
+html {
+      scroll-behavior: smooth;
+}
+
+/* 배경 */
+body {
+      background-color: var(--bg-color);
+      overflow-x: hidden;
+}
+.bg-img1 {
+      position: absolute;
+      left:0; top:0;
+      right:0;
+      margin: 0 auto;
+      width:1920px; 
+      /* 이미지를 100%로하면 반응형일때 이미지가 전체적으로 움직임--고정값으로 넣으면 움직이지않음. 문제는 가로 스크롤일 발생할수있음--body에 overflow-x: hidden; 을 넣어주면 가로스크롤 발생하지않음 */
+      z-index: -1;
+      animation: bg 1 3s both;
+}
+.bg-img2 {
+      position: absolute;
+      left:0; top:464px;
+      right:0;
+      margin: 0 auto;
+      width:1920px;
+      z-index: -1;
+      animation: bg 1 2s .5s both;
+}
+.bg-img3 {
+      position: absolute;
+      left:0; top:768px;
+      right:0;
+      margin: 0 auto;
+      width:1920px;
+      z-index: -1;
+      animation: bg 1 .5s .7s both;
+}
+
+@keyframes bg {
+      0% { transform: translateY(0); opacity: 0;}
+      50% { opacity: 1;}
+      100% { transform: translateY(-50px); opacity: 1;}
+}
+
+
+/* 헤더 */
+.header {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      left:80px;
+      right:80px;
+      top:64px;
+      z-index: 100;
+}
+.h1 {
+      font-size: 32px;
+      line-height: 38px;
+      letter-spacing: 0.01em;
+      font-family: var(--font1);
+      font-weight: 400;
+      color:var(--white);
+}
+.gnb {
+     display: flex; 
+     gap: 40px;
+}
+.gnb a {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;      
+      color:var(--white);     
+}
+.btn-account {
+      display: flex;
+      font-size: 17px;
+      line-height: 21px;
+      color:var(--white);
+}
+.btn-account::before {
+      content:'';
+      background: url(../images/ico_member.svg) no-repeat;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+}
+
+/* visual */
+.visual {
+      height: 1200px;
+}
+.sns {
+      position: fixed;
+      display: flex;
+      flex-direction: column;      
+      left:80px; top:50%;
+      transform: translateY(-50%);
+      gap : 24px;
+}
+.sns__title {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22px;
+      color: var(--white);    
+}
+.btn-insta {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url(../images/ico_insta.svg) no-repeat;
+}
+.btn-twitter {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url(../images/ico_twitter.svg) no-repeat;
+}
+.quick {
+      position: fixed;
+      right: 80px;
+      top:50%;
+      z-index: 20;
+      transform: translateY(-50%);
+}
+.quick a {
+      display: block;
+      padding-right:32px;
+      text-align:right;
+      font-size: 18px;
+      line-height: 60px; /* flex를 쓰지않고도 줄의 가운데로 할수있음 */
+      color:var(--white);
+      border-right:3px solid var(--white-5);
+}
+.quick a.active{
+      border-color:var(--white);
+}
+.visual__copy {
+      display: grid;
+      gap:32px;
+      position: absolute;
+      left: 50%;
+      top: 287px;
+      transform: translateX(-50%);
+}
+.visual__copy .subtitle {
+      animation: txt 1 .7s 1s both;
+}
+.subtitle {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+}
+.subtitle::before {
+      content: '';
+      width: 72px;
+      height: 2px;
+      background: var(--gold);
+}
+.visual__copy .maintitle {
+      font-size: 88px;
+      line-height: 100px;
+      text-transform: capitalize;
+      color: var(--white);
+      font-family: var(--font1);
+      animation: txt 1 .7s 1.3s both;
+}
+.visual__copy .txt-guide {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      /* margin-top: 32px;    <---- flex 로 gap 값으로 변경*/
+      font-size: 18px;
+      line-height: 22px;
+      color: var(--white);
+      animation: txt 1 .7s 1.5s both;
+}
+
+
+@keyframes txt {
+      0% { transform: translateX(-50px); opacity: 0;}
+      100% { transform: translateX(0); opacity: 1;}
+}
+
+.visual__copy .txt-guide::after {
+      content:'';
+      width: 16px;
+      height: 24px;
+      margin-left: 16px;
+      background: url(../images/ico_arrow_down.svg) no-repeat;
+}
+.dimmed {
+      position: absolute;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      height: 1200px;
+      background: linear-gradient(330.24deg, rgba(11, 29, 38, 0) 31.06%, #0B1D26 108.93%);
+}
+.gradient-content {
+      height: 700px;
+      background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0B1D26 61.38%);
+}
+.index-contents {
+      display: grid;
+      gap:200px;
+      /* 상하 여백을 주기위해서 display grid값을 넣어주고
+      gap을 주었음 */
+      margin:-460px auto 0;
+      /* footer영역이 따라올라가서 아래 여백이 생기는걸 방지하기위해 margin 값으로만 정의 */
+      width: 1462px;
+}
+
+/* 콘텐츠 */
+.block {
+      display: flex;
+      position: relative;
+      padding-left: 150px;   
+      gap: 114px;   
+}
+
+/* block요소안에 짝수면 행을 바꾸기 (even)=짝수/ (odd)=홀수 */
+.block:nth-of-type(even) {
+      flex-direction: row-reverse;
+}
+/* 바꾼행에서 숫자요소에 위치 재배열 */
+.block:nth-of-type(even) .block__count {
+      left: -130px;
+}
+
+.block > div {
+      flex:1;
+      display: flex;
+      width: 542px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 27px;
+}
+.block img {
+      width: 566px;
+      height: 720px;
+}
+.block .subtitle {
+      order: 1;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      text-transform: uppercase;
+}
+.block__title {
+      order: 2;
+      font-size: 64px;
+      line-height: 77px;
+      color: var(--white);
+      font-family: var(--font1);
+}
+.block__content {
+      order: 3;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 32px;
+      color: var(--white);
+}
+.block__more {
+      order: 4;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 18px;
+      line-height: 22px;
+      color: var(--gold);
+}
+.block__more::after {
+      content: '';
+      width: 24px;
+      height: 16px;
+      background: url(../images/ico_arrow_right.svg) no-repeat;
+}
+.block__count {
+      position: absolute;
+      left: -116px; top: 38px;
+      font-size: 240px;
+      font-weight: 700;
+      line-height: 1;
+      /* font-size: 240px와 line-height:240px이 값이 같으면
+      line-height: 1로 쓴다. 1배수 */
+      display: flex;
+      flex-direction: column;      
+      gap : 24px;
+      letter-spacing: -14px;
+      color: var(--white-1);
+}
+
+/* footer */
+.footer {
+      display: flex;
+      justify-content: space-between;
+      margin: 200px auto 120px;
+      width: 1462px;
+}
+.footer__left {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(24px, auto) 1fr minmax(32px, auto);
+}
+.footer__txt {
+      font-size: 18px;
+      line-height: 32px;
+      color: var(--white);
+}
+.footer__copy {
+      font-size: 18px;
+      line-height: 32px;
+      color: var(--white-5);
+}
+.footer__right {
+      display: flex;
+      gap: 212px;
+}
+.footer__nav h2 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      padding: 0 0 8px ;
+      color: var(--gold);
+}
+.footer__nav li {
+      padding: 16px 0 0;
+}
+.footer__nav a {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 40px;
+      color: var(--white);
+}
