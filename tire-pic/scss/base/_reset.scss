@@ -55,7 +55,7 @@
             }
             @else if $value == body{
                 height: 100%;
-                background: #f1f1f1;
+                background: #ffffff;
                 -webkit-text-size-adjust:none;
                 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                 @include apply_style("box-style");
@@ -77,7 +77,7 @@
                 }
             }
             @else if $value == textarea{
-                resize: none;-webkit-appearance:none;-webkit-border-radius:0;
+                resize: none;
                 @include apply_style("box-style");
                 &:focus{
                     outline: 0;
@@ -94,6 +94,7 @@
                 border-width: 0;
                 background: 0 0;
                 outline: 0;
+                vertical-align: middle;
                 @include apply_style("box-style");
                 @include font-style(null,null,400,normal,null);
                 &:focus{

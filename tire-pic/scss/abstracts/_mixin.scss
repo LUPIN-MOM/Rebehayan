@@ -1,16 +1,23 @@
+//Responsive
+@mixin mobile {
+      @media (min-width: 0px) and (max-width: $web) {
+            @content;
+      }
+}
+
 //Backgroud
-//파일명, x축, y축, 배경색, 가로크기, 높이크기
+//파일명, x축, y축, 배경색, 가로크기, 세로크기
 @mixin bg(
       $fileName, 
       $x: null, 
       $y: null, 
       $color: null, 
+      $width: null,
       $height: null
-)
-{
+      ){
       background: url(#{$imageUrl}#{$fileName}) no-repeat $x $y $color ;
       background-size: $width $height;
-}
+      }
 
 //IR
 @mixin hide {

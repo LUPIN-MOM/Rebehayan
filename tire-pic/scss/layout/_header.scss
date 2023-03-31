@@ -1,9 +1,94 @@
 .header {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      padding: 0 40px;
+      padding: 40px 40px;
+      @include mobile {
+            padding: 0px 15px;
+      }
+      &__nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            @include mobile {
+                  display: none;
+            } 
+      }
 }
 
+.logo {
+      font-size: 0;
+}
 .spot-menu {
-      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding: 0 40px;
+      border-bottom: 1px solid $greye7;
+      @include mobile {
+            position: static;
+            border: none;
+            padding: 0;
+            a,
+            button {
+                  width: 45px;
+                  height: 56px;
+            }
+            &__cart a {
+                  @include bg ('ico_cart.png', center);
+                  order: 2;
+            }
+            &__mypage a {
+                  @include bg ('ico_member.png', center);
+                  order: 1;
+            }
+            span {
+                  @include hide;
+            }
+      }
+      nav {
+            display: flex;
+            justify-content: flex-end;
+      }
+      ul {
+            display: flex;
+            // gap : 44px;
+      }
+      li {
+            display: flex;
+            align-items: center;
+            height: 31px;
+            @include mobile {
+                  &.hidden {
+                        display: none;
+                  }
+            }
+            + li {
+                  &::before {
+                  content: '';
+                  // display: inline-block;     ---> 공백요소가 생겨나기때문에 쓰지않음
+                  margin: 0 20px;
+                  width: 2px;
+                  height: 10px;
+                  background-color: $greydd;
+                  @include mobile {
+                        display: none;
+                  }
+            }
+         }   
+      }
+      a {
+            font-size: 14px;
+            color: $grey6f;
+      }
+      [aria-hidden] {
+            display: none;
+            @include mobile {
+                  button {
+                        @include bg ('ico_menu.png', center);
+                  }
+                  display: flex;
+            }
+      }
 }

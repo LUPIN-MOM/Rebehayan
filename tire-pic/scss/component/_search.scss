@@ -1,14 +1,25 @@
 .search {
-      height: 48px;
+      display: flex;
+      padding: 0 5px;
+      height: 46px;
       border-radius: 48px;
       border: 1px solid $purple;
       &__button {
             // background: url("../images/btn_search.png") no-repeat center ;
             @include bg ("btn_search.png", center);
             width: 46px;
-            height: 46px;
+            height: 47px;
+            border-radius: 100px;
       }
       input {
             width: 345px;
+            height: 40px;
+            border-radius: 46px;
+            position: relative;
+            top: 5px;
+            &::placeholder {
+            font-size: 17px;
+            color: $grey96;
+            }
       }
 }
