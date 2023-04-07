@@ -6,6 +6,12 @@
 
 @import "component/search"; //검색
 @import "component/gnb"; //메뉴
+@import "component/megamenu"; //팝업메뉴
+@import "component/button"; //버튼
+@import "component/slide"; //슬라이드
+
+@import "vendor/swiper-vars.scss"; //swiper
+@import "vendor/swiper.scss"; //swiper
 
 @import "layout/header"; //헤더
 

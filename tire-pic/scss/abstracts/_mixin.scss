@@ -1,3 +1,16 @@
+//position
+@mixin position($x, $xvalue, $y, $yvalue) {
+      position: absolute;
+      #{$x}:$xvalue;
+      #{$y}:$yvalue;
+      @if $xvalue == 50% and $yvalue == 50% {
+            transform: translate(-50%, -50%);     
+      } @else if $xvalue == 50% {
+            transform: translateX(-50%);
+      } @else if $yvalue == 50% {
+            transform: translateY(-50%);
+      }
+}
 //Responsive
 @mixin mobile {
       @media (min-width: 0px) and (max-width: $web) {

@@ -2,7 +2,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 40px 40px;
+      padding: 48px 40px 0;
       @include mobile {
             padding: 0px 15px;
       }
@@ -20,11 +20,14 @@
       font-size: 0;
 }
 .spot-menu {
+      @include position(left,0,top,0);
       position: absolute;
-      left: 0;
-      right: 0;
+      // left: 0;
+      // right: 0;
+      width: 100%;
       top: 0;
       padding: 0 40px;
+      box-sizing: border-box;
       border-bottom: 1px solid $greye7;
       @include mobile {
             position: static;
@@ -60,6 +63,7 @@
             align-items: center;
             height: 31px;
             @include mobile {
+                  height: auto;
                   &.hidden {
                         display: none;
                   }
@@ -92,3 +96,4 @@
             }
       }
 }
+

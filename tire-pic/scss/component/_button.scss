@@ -1,0 +1,7 @@
+.btn {
+      &-close {
+            @include bg ("btn_close.png", center);
+            width: 58px;
+            height: 58px;
+      }
+}
