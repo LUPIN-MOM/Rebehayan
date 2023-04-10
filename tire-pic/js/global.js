@@ -57,11 +57,11 @@ $(function () {
             var swiper = new Swiper(".visual",{
                   loop: true,
                   pagination: {
-                        el: ".swiper-pagination",
+                        el: ".visual__paging",
                         clickable: true,
                   renderBullet: function (index, className) {
                         return (
-                              '<span class="' + className + '">' + (menuName[index]) + "</span>"
+                              '<button class="' + className + '">' + (menuName[index]) + "</button>"
                         );
                       },
                   },

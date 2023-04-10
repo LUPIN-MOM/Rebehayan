@@ -93,8 +93,10 @@
                 border-radius: 0;
                 border-width: 0;
                 background: 0 0;
+                background-color: #ffffff;
                 outline: 0;
                 vertical-align: middle;
+                cursor: pointer;
                 @include apply_style("box-style");
                 @include font-style(null,null,400,normal,null);
                 &:focus{

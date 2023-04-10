@@ -1,4 +1,27 @@
 .visual {
+      position: relative;
       height: 500px;
       background-color: $pinkd3;
+      &__paging {
+            @include position(left, 50%, bottom, 10px);
+            display: flex;
+            background-color: rgba($white, .2);
+            z-index: 1000;
+            border-radius: 8px;
+            padding: 4px;
+            button {
+                  padding: 0 30px;
+                  height: 30px;
+                  background-color: transparent;
+                  transition: background .3s;
+                  color: $grey5a;
+                  border-radius: 6px;
+                  white-space: nowrap;
+                  &[aria-current] {
+                        background-color: $white;
+                        box-shadow: 1px 1px 3px rgba($black, .1);
+                        color: $black;
+                  }
+            }
+      }
 }
