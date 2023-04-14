@@ -2,13 +2,32 @@
       position: relative;
       height: 500px;
       background-color: $pinkd3;
+      @include mobile {
+            height: 425px;
+      }
       &__paging {
             @include position(left, 50%, bottom, 10px);
             display: flex;
-            background-color: rgba($white, .2);
+            padding: 4px;
+            background-color: rgba($white, .5);
             z-index: 1000;
             border-radius: 8px;
-            padding: 4px;
+            @include mobile {
+                  // @include position(left, 50%, bottom, 10px);     <--- 중복되서 지워줬음
+                  left: inherit;
+                  right: 20px;
+                  font-size: 13px;
+                  padding: 0 12px;
+                  line-height: 20px;
+                  border-radius: 20px;
+                  .swiper-pagination-total {
+                        &::after {
+                              content: "+";
+                              padding-left: 5px;
+
+                        }
+                  }
+            }
             button {
                   padding: 0 30px;
                   height: 30px;

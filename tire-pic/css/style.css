@@ -265,6 +265,11 @@ input:focus {
   height: 500px;
   background-color: #fdc1d3;
 }
+@media (min-width: 0px) and (max-width: 1024px) {
+  .visual {
+    height: 425px;
+  }
+}
 .visual__paging {
   position: absolute;
   left: 50%;
@@ -274,10 +279,24 @@ input:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: 1000;
   border-radius: 8px;
-  padding: 4px;
+}
+@media (min-width: 0px) and (max-width: 1024px) {
+  .visual__paging {
+    left: inherit;
+    right: 20px;
+    font-size: 13px;
+    padding: 0 12px;
+    line-height: 20px;
+    border-radius: 20px;
+  }
+  .visual__paging .swiper-pagination-total::after {
+    content: "+";
+    padding-left: 5px;
+  }
 }
 .visual__paging button {
   padding: 0 30px;

@@ -6,16 +6,32 @@ $(function () {
             responsiveMobile: 1024,
       };
 
-      const $window =$(window);
-      const $btnMega = $(defaultConfig.megaCloseButton);
-      const $btnMegaClose = $(defaultConfig.megaOpenButton);
-      const $megamenu = $(defaultConfig.megaMenu);
-      const $mobileSize = defaultConfig.responsiveMobile;      
+      const config = {
+            visualPaging: ".visual__paging",
+            visualPagingMobile: ".visual__paging__mobile",
+            ...defaultConfig,
+      };
 
+      const $window = $(window);
+      const $btnMega = $(defaultConfig.megaOpenButton);
+      const $btnMegaClose = $(defaultConfig.megaCloseButton);
+      const $megamenu = $(defaultConfig.megaMenu);
+      const $mobileSize = defaultConfig.responsiveMobile;  
+      const $visualPagnation = $(config.visualPaging);    
+      const $visualPagnationMobile = $(config.visualPagingMobile);    
+      let visualPageName = [
+            "새해 이벤트", 
+            "리뷰 이벤트", 
+            "앱 설치 혜택", 
+            "피렐리 무상교환",
+            "삼성화재 이벤트",
+            "자동세차 100원", 
+      ];
+      
       function init() {
             eventListens();
-            slide();
-      };
+            visualSlide(".visual");
+      }
 
       function eventListens() {
             // 모바일 메뉴 클릭 이벤트 핸들링
@@ -23,7 +39,7 @@ $(function () {
             $btnMegaClose.on("click", megaClose);
 
             // 반응형 모바일메뉴 리사이즈 이벤트 핸들링
-            $window.on("resize", removeMobileNav);
+            $window.on("resize load", responsive);
       }
 
       function megaOpen(){
@@ -34,40 +50,43 @@ $(function () {
             $megamenu.hide();
       }
 
-      //반응형 모바일메뉴 제어
-      function removeMobileNav(){
-            $(window).on('resize', resizeMobile)
-      }
-      function resizeMobile() {
-            let $windowWidth = $window.width();
-            if ($windowWidth > $mobileSize) {
-                  megaClose();
+      function responsive() {
+            let windowWidth = $window.width();
+            if (windowWidth > $mobileSize) {
+              megaClose();
+              $visualPagnation.show();
+              $visualPagnationMobile.hide();
+            } else {
+              $visualPagnation.hide();
+              $visualPagnationMobile.show();
             }
-      }
-
-      function slide() {
-            let menuName = [
-                  "새해 이벤트", 
-                  "리뷰 이벤트", 
-                  "앱 설치 혜택", 
-                  "피렐리 무상교환",
-                  "삼성화재 이벤트",
-                  "자동세차 100원", 
-            ];
-            var swiper = new Swiper(".visual",{
+          }
+      
+      function visualSlide($target) {
+            var swiper = new Swiper($target, {
                   loop: true,
                   pagination: {
-                        el: ".visual__paging",
+                        el: config.visualPaging,
                         clickable: true,
-                  renderBullet: function (index, className) {
-                        return (
-                              '<button class="' + className + '">' + (menuName[index]) + "</button>"
-                        );
-                      },
-                  },
-            })
-      }
+                        renderBullet: function (index, className) {
+                              return (
+                                    '<button class="' + className + '">' + visualPageName[index] + "</button>"
+                                    );
+                              },
+                        },                  
+                  });
+                  
+                  var swiperFraction = new Swiper($target, {
+                        pagination: {
+                                    el: config.visualPagingMobile,
+                                    type: "fraction",
+                                    clickable: true,
+                        },
+                  });
+                  swiper.controller.control = swiperFraction;
+
+      };
+
 
       init();
 });
-
