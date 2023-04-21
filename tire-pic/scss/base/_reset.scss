@@ -12,6 +12,17 @@
 %list-style{
     list-style: none;
 }
+
+//텍스트 마우스 드래그시 색상 변경
+::-moz-selection {
+    background: #f8cdcd;
+    color: #fff;
+ }
+ ::selection {
+    background: #f8cdcd;
+    color: #fff;
+ }
+
 //body에 배경색이 있을 때
 @mixin mw-background($color) {
     @at-root #{if(&, 'body#{&}', 'body')} {

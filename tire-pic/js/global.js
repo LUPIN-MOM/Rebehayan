@@ -57,10 +57,10 @@ $(function () {
               $visualPagnation.show();
               $visualPagnationMobile.hide();
             } else {
-              $visualPagnation.hide();
               $visualPagnationMobile.show();
+              $visualPagnation.hide();
             }
-          }
+      }
       
       function visualSlide($target) {
             var swiper = new Swiper($target, {

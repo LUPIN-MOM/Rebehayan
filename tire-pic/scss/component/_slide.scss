@@ -9,17 +9,19 @@
             @include position(left, 50%, bottom, 10px);
             display: flex;
             padding: 4px;
-            background-color: rgba($white, .5);
+            background: rgba($white, .5);
             z-index: 1000;
             border-radius: 8px;
             @include mobile {
                   // @include position(left, 50%, bottom, 10px);     <--- 중복되서 지워줬음
+                  width: fit-content;
                   left: inherit;
                   right: 20px;
                   font-size: 13px;
                   padding: 0 12px;
                   line-height: 20px;
                   border-radius: 20px;
+                  transform: translate(0, 0);
                   .swiper-pagination-total {
                         &::after {
                               content: "+";

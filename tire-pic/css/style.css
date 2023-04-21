@@ -16,6 +16,16 @@ li, ol, ul {
   list-style: none;
 }
 
+::-moz-selection {
+  background: #f8cdcd;
+  color: #fff;
+}
+
+::selection {
+  background: #f8cdcd;
+  color: #fff;
+}
+
 .blind, .skip {
   overflow: hidden;
   position: absolute;
@@ -280,18 +290,23 @@ input:focus {
   display: -ms-flexbox;
   display: flex;
   padding: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   z-index: 1000;
   border-radius: 8px;
 }
 @media (min-width: 0px) and (max-width: 1024px) {
   .visual__paging {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     left: inherit;
     right: 20px;
     font-size: 13px;
     padding: 0 12px;
     line-height: 20px;
     border-radius: 20px;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
   .visual__paging .swiper-pagination-total::after {
     content: "+";
